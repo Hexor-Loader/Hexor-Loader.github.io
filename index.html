@@ -197,6 +197,8 @@ body {
     transform: scale(.94);
 }
 
+/* الشريط السفلي */
+
 .footer {
     position: absolute;
     bottom: 35px;
@@ -211,22 +213,73 @@ body {
 
     font-size: clamp(20px, 2.2vw, 30px);
     font-weight: bold;
-    color: rgba(255,255,255,.95);
 
     text-shadow: 0 0 10px rgba(0,100,255,.55);
 }
 
+/* العنوان */
+
 .footer .address {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
     text-align: right;
     line-height: 1.5;
+
+    color: #ffd400;
 }
 
+.address-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+
+    fill: #ffd400;
+
+    filter: drop-shadow(0 0 7px rgba(255,212,0,.55));
+}
+
+/* الهاتف والواتساب */
+
 .footer .phone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
     direction: ltr;
     text-align: left;
     white-space: nowrap;
+
+    color: white;
     font-size: clamp(21px, 2.4vw, 32px);
 }
+
+.phone-icon {
+    width: 29px;
+    height: 29px;
+
+    fill: white;
+
+    filter: drop-shadow(0 0 5px rgba(255,255,255,.4));
+}
+
+.whatsapp-icon {
+    width: 34px;
+    height: 34px;
+
+    fill: #25D366;
+
+    filter: drop-shadow(0 0 7px rgba(37,211,102,.5));
+}
+
+.footer-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* شاشات الهواتف */
 
 @media (max-width: 600px) {
 
@@ -243,16 +296,34 @@ body {
         bottom: 25px;
         gap: 12px;
         text-align: center;
+
         font-size: clamp(17px, 4vw, 22px);
     }
 
     .footer .address,
     .footer .phone {
+        justify-content: center;
         text-align: center;
     }
 
     .footer .phone {
         font-size: clamp(19px, 4.5vw, 24px);
+    }
+
+    .address-icon {
+        width: 27px;
+        height: 27px;
+        min-width: 27px;
+    }
+
+    .phone-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .whatsapp-icon {
+        width: 29px;
+        height: 29px;
     }
 
     .bottom-line {
@@ -297,11 +368,39 @@ body {
 <footer class="footer">
 
     <div class="address">
-        العنوان : شارع المستشفى مقابل اسواق ابو شيبة - بقرب مطعم جومانجي
+
+        <!-- أيقونة الموقع -->
+
+        <svg class="address-icon" viewBox="0 0 24 24">
+            <path d="M12 2C7.58 2 4 5.58 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.42-3.58-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+        </svg>
+
+        <span>
+            العنوان : شارع المستشفى مقابل اسواق ابو شيبة - بقرب مطعم جومانجي
+        </span>
+
     </div>
 
     <div class="phone">
-        الهاتف : 07712082333
+
+        <div class="footer-icons">
+
+            <!-- أيقونة الهاتف -->
+
+            <svg class="phone-icon" viewBox="0 0 24 24">
+                <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.56 3.57.56.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.19 2.45.56 3.57.11.35.03.74-.25 1.02l-2.19 2.2z"/>
+            </svg>
+
+            <!-- أيقونة واتساب -->
+
+            <svg class="whatsapp-icon" viewBox="0 0 24 24">
+                <path d="M20.52 3.48A11.85 11.85 0 0 0 12.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.59 5.96L.05 24l6.29-1.65a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.9-5.34 11.91-11.91a11.85 11.85 0 0 0-3.47-8.42zM12.08 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98.99-3.64-.23-.37a9.87 9.87 0 0 1-1.52-5.27c0-5.47 4.45-9.92 9.93-9.92a9.87 9.87 0 0 1 7.02 2.91 9.87 9.87 0 0 1 2.9 7.03c0 5.47-4.45 9.92-9.93 9.92zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35z"/>
+            </svg>
+
+        </div>
+
+        <span>07712082333</span>
+
     </div>
 
 </footer>
