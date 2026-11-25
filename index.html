@@ -23,7 +23,6 @@ body {
     background: #02040c;
 }
 
-
 .background {
     position: fixed;
     inset: 0;
@@ -48,7 +47,6 @@ body {
         linear-gradient(135deg, #020718, #000 65%);
 }
 
-
 .background::before {
     content: "";
     position: absolute;
@@ -65,7 +63,6 @@ body {
 
     opacity: .7;
 }
-
 
 .center-dark {
     position: fixed;
@@ -84,7 +81,6 @@ body {
 
     z-index: -1;
 }
-
 
 .line {
     position: absolute;
@@ -110,7 +106,6 @@ body {
     bottom: 100px;
 }
 
-
 .header {
     position: absolute;
     top: 48px;
@@ -130,7 +125,6 @@ body {
     text-shadow: 0 0 12px rgba(0,120,255,.65);
 }
 
-
 .screen {
     position: absolute;
     inset: 110px 0 115px;
@@ -139,7 +133,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 
 .goldhen-button {
     display: flex;
@@ -175,7 +168,6 @@ body {
     -webkit-user-drag: none;
 }
 
-
 .goldhen-button span {
     font-size: clamp(20px, 2.5vw, 30px);
     font-weight: 800;
@@ -186,7 +178,6 @@ body {
         0 0 10px #0077ff,
         0 0 20px #004cff;
 }
-
 
 @media (hover: hover) and (pointer: fine) {
 
@@ -202,11 +193,9 @@ body {
     }
 }
 
-
 .goldhen-button:active {
     transform: scale(.94);
 }
-
 
 .footer {
     position: absolute;
@@ -218,22 +207,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 
-    font-size: clamp(13px, 1.5vw, 19px);
-    color: rgba(255,255,255,.9);
+    font-size: clamp(20px, 2.2vw, 30px);
+    font-weight: bold;
+    color: rgba(255,255,255,.95);
+
+    text-shadow: 0 0 10px rgba(0,100,255,.55);
 }
 
 .footer .address {
     text-align: right;
+    line-height: 1.5;
 }
 
 .footer .phone {
     direction: ltr;
     text-align: left;
     white-space: nowrap;
+    font-size: clamp(21px, 2.4vw, 32px);
 }
-
 
 @media (max-width: 600px) {
 
@@ -248,13 +241,18 @@ body {
     .footer {
         flex-direction: column;
         bottom: 25px;
-        gap: 8px;
+        gap: 12px;
         text-align: center;
+        font-size: clamp(17px, 4vw, 22px);
     }
 
     .footer .address,
     .footer .phone {
         text-align: center;
+    }
+
+    .footer .phone {
+        font-size: clamp(19px, 4.5vw, 24px);
     }
 
     .bottom-line {
@@ -272,7 +270,6 @@ body {
 
 <div class="line top-line"></div>
 <div class="line bottom-line"></div>
-
 
 <header class="header">
     <span>مكتب</span>
