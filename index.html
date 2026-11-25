@@ -1,93 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoldHEN Multi FW - مكتب العراب</title>
-  <style>
-    * { box-sizing: border-box; }
-    html, body {
-      width: 100%;
-      min-height: 100%;
-      margin: 0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoldHEN - مكتب العراب</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background: #02040c;
+}
+
+/* الخلفية */
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0, 12, 40, 0.35) 0%,
+            rgba(0, 0, 0, 0.92) 65%
+        ),
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 75, 190, 0.45),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(0, 45, 140, 0.35),
+            transparent 45%
+        ),
+        linear-gradient(135deg, #020718, #000 65%);
+}
+
+/* إضاءة الخلفية */
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            125deg,
+            transparent 0px,
+            transparent 100px,
+            rgba(0, 110, 255, 0.07) 102px,
+            transparent 104px
+        );
+
+    opacity: .7;
+}
+
+/* تعتيم الوسط */
+.center-dark {
+    position: fixed;
+    width: 65%;
+    height: 65%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        ellipse,
+        rgba(0, 0, 0, .85),
+        rgba(0, 0, 0, .35),
+        transparent 75%
+    );
+
+    z-index: -1;
+}
+
+/* الخط العلوي والسفلي */
+.line {
+    position: absolute;
+    left: 3%;
+    width: 94%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+
+    box-shadow: 0 0 5px rgba(255,255,255,.3);
+}
+
+.top-line {
+    top: 35px;
+}
+
+.bottom-line {
+    bottom: 100px;
+}
+
+/* العنوان العلوي */
+.header {
+    position: absolute;
+    top: 48px;
+    left: 5%;
+    right: 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header span {
+    font-size: clamp(25px, 3vw, 42px);
+    font-weight: bold;
+    color: #fff;
+
+    text-shadow: 0 0 12px rgba(0,120,255,.65);
+}
+
+/* منطقة الزر */
+.screen {
+    position: absolute;
+    inset: 110px 0 115px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* زر GoldHEN */
+.goldhen-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        filter .3s ease;
+}
+
+/* الأيقونة */
+.goldhen-button img {
+    width: clamp(180px, 25vw, 310px);
+    height: clamp(180px, 25vw, 310px);
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 12px rgba(0,100,255,.8))
+        drop-shadow(0 0 25px rgba(0,60,255,.35));
+
+    transition: .3s ease;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* اسم الزر */
+.goldhen-button span {
+    font-size: clamp(20px, 2.5vw, 30px);
+    font-weight: 800;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #0077ff,
+        0 0 20px #004cff;
+}
+
+/* التكبير عند تمرير الماوس */
+@media (hover: hover) and (pointer: fine) {
+
+    .goldhen-button:hover {
+        transform: scale(1.12);
+        filter: brightness(1.2);
     }
-    body {
-      min-height: 100vh;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #000;
-      font-family: Arial, sans-serif;
+
+    .goldhen-button:hover img {
+        filter:
+            drop-shadow(0 0 20px #008cff)
+            drop-shadow(0 0 40px #004cff);
     }
+}
+
+/* الضغط */
+.goldhen-button:active {
+    transform: scale(.94);
+}
+
+/* شريط المعلومات السفلي */
+.footer {
+    position: absolute;
+    bottom: 35px;
+
+    left: 5%;
+    right: 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    font-size: clamp(13px, 1.5vw, 19px);
+    color: rgba(255,255,255,.9);
+}
+
+.footer .address {
+    text-align: right;
+}
+
+.footer .phone {
+    direction: ltr;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* شاشات صغيرة */
+@media (max-width: 600px) {
+
+    .header {
+        top: 50px;
+    }
+
     .screen {
-      width: 100%;
-      min-height: 100vh;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+        inset: 120px 0 130px;
     }
-    .goldhen-button {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      padding: 0;
-      border: 0;
-      outline: 0;
-      background: transparent;
-      color: #ffd400;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-      transition: transform 220ms ease, filter 220ms ease;
-      transform: scale(1);
+
+    .footer {
+        flex-direction: column;
+        bottom: 25px;
+        gap: 8px;
+        text-align: center;
     }
-    .goldhen-button img {
-      display: block;
-      width: clamp(170px, 35vw, 290px);
-      height: clamp(170px, 35vw, 290px);
-      object-fit: contain;
-      border-radius: 50%;
-      user-select: none;
-      -webkit-user-drag: none;
-      filter: drop-shadow(0 0 12px rgba(0, 105, 255, .48));
+
+    .footer .address,
+    .footer .phone {
+        text-align: center;
     }
-    .goldhen-button span {
-      font-size: clamp(19px, 3vw, 27px);
-      line-height: 1.2;
-      font-weight: 800;
-      letter-spacing: .4px;
-      text-align: center;
-      text-shadow: 0 0 10px rgba(0, 105, 255, .75);
+
+    .bottom-line {
+        bottom: 115px;
     }
-    @media (hover: hover) and (pointer: fine) {
-      .goldhen-button:hover {
-        transform: scale(1.10);
-        filter: brightness(1.12);
-      }
-    }
-    .goldhen-button:active {
-      transform: scale(.96);
-    }
-    .goldhen-button:focus-visible {
-      outline: 2px solid #168cff;
-      outline-offset: 12px;
-      border-radius: 18px;
-    }
-  </style>
+}
+
+</style>
 </head>
+
 <body>
-  <main class="screen">
-    <button class="goldhen-button" type="button"
-      aria-label="GoldHEN Multi FW"
-      onclick="window.location.href='g2all/index.html'">
-      <img src="hexor-icon.png" alt="مكتب العراب">
-      <span>GoldHEN Multi FW</span>
+
+<div class="background"></div>
+<div class="center-dark"></div>
+
+<div class="line top-line"></div>
+<div class="line bottom-line"></div>
+
+<!-- العنوان -->
+<header class="header">
+    <span>العراب</span>
+    <span>مكتب</span>
+</header>
+
+<!-- زر التفعيل -->
+<main class="screen">
+
+    <button
+        class="goldhen-button"
+        type="button"
+        aria-label="GoldHEN Multi FW"
+        onclick="window.location.href='g2all/index.html'">
+
+        <img
+            src="hexor-icon.png"
+            alt="مكتب العراب">
+
+        <span>GoldHEN Multi FW</span>
+
     </button>
-  </main>
+
+</main>
+
+<!-- معلومات المكتب -->
+<footer class="footer">
+
+    <div class="address">
+        العنوان : شارع المستشفى - بقرب مطعم جومانجي
+    </div>
+
+    <div class="phone">
+        الهاتف : 07712082333
+    </div>
+
+</footer>
+
 </body>
 </html>
