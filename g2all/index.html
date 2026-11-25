@@ -1,10 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-<title>PS4 [5.05] 7.00 - 14.02 FW GoldHEN Host by GamerHack</title>
-<link rel="stylesheet" href="../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PS4 5.05 - 7.00 - 14.02 FW GoldHEN</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background: #02040c !important;
+    background-image: none !important;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* إخفاء الشريط الأبيض */
+
+hr {
+    display: none !important;
+}
+
+/* شعار مكتب العراب */
+
+.brand {
+    width: 100%;
+    margin-top: 45px;
+    text-align: center;
+}
+
+.brand-name {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    font-size: clamp(32px, 5vw, 55px);
+    font-weight: 900;
+
+    color: #ffd400;
+
+    text-shadow:
+        0 0 8px rgba(255, 190, 0, .6),
+        0 0 20px rgba(255, 150, 0, .35);
+
+    letter-spacing: 2px;
+}
+
+.crown {
+    font-size: clamp(35px, 5vw, 55px);
+    filter: drop-shadow(0 0 8px rgba(255, 190, 0, .7));
+}
+
+/* الخط الاحترافي */
+
+.brand-line {
+    width: 70%;
+    max-width: 600px;
+    height: 1px;
+    margin: 20px auto;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 212, 0, .9),
+        transparent
+    );
+
+    box-shadow: 0 0 8px rgba(255, 212, 0, .3);
+}
+
+/* عنوان النظام */
+
+.page-title {
+    color: #e8e8e8;
+    font-size: clamp(17px, 2.5vw, 25px);
+    font-weight: bold;
+    margin-top: 30px;
+    text-shadow: 0 0 10px rgba(0, 110, 255, .5);
+}
+
+/* رسالة التشغيل */
+
+#msgs {
+    font-size: 30px;
+    margin-top: 77px;
+    margin-bottom: 455px;
+    color: white;
+    text-shadow: 0 0 12px rgba(0, 110, 255, .7);
+}
+
+/* الهواتف */
+
+@media (max-width: 600px) {
+    .brand {
+        margin-top: 35px;
+    }
+
+    .brand-line {
+        width: 85%;
+    }
+
+    #msgs {
+        font-size: 23px;
+        margin-top: 77px;
+        margin-bottom: 455px;
+    }
+}
+</style>
+
 </head>
+
 <body>
+
 <script>
 var uaFull = navigator.userAgent;
 var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
@@ -86,10 +206,32 @@ if (!isPS4) {
     }
 }
 </script>
-<h1>PS4 [5.05] 7.00 - 14.02 FW GoldHEN Host by GamerHack</h1>
-<hr>
-<br>
-<h1 id=msgs style="font-size: 30px;margin-top: 77px;margin-bottom: 455px;">Loading GoldHEN v2.4b18.14... Please Wait</h1>
-<h1 style="margin-top: 43px;">Special Thanks to:<a href="https://twitter.com/_AlAzif" style="color: #f31414;margin-left: 10px;margin-right: 10px;">@_AlAzif</a>ChendoChap<a href="https://x.com/Kameleonre_" style="color: #f31414;margin-left: 10px;margin-right: 10px;">@Kameleonre_</a>SiSTR0 Abc</h1>
+
+<!-- شعار مكتب العراب -->
+
+<header class="brand">
+
+    <div class="brand-name">
+        <span class="crown">👑</span>
+        <span>مكتب العراب</span>
+        <span class="crown">👑</span>
+    </div>
+
+    <div class="brand-line"></div>
+
+</header>
+
+<!-- عنوان GoldHEN -->
+
+<h1 class="page-title">
+    PS4 5.05 - 7.00 - 14.02 FW GoldHEN
+</h1>
+
+<!-- رسالة التشغيل الأصلية -->
+
+<h1 id="msgs">
+    Loading GoldHEN v2.4b18.14... Please Wait
+</h1>
+
 </body>
 </html>
