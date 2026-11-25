@@ -1,51 +1,93 @@
 <!DOCTYPE html>
-<html><head>
-<title>PS4 07712082333 GoldHEN - 5 + 14.02</title>
-<link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoldHEN Multi FW - مكتب العراب</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+    }
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #000;
+      font-family: Arial, sans-serif;
+    }
+    .screen {
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .goldhen-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: #ffd400;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 220ms ease, filter 220ms ease;
+      transform: scale(1);
+    }
+    .goldhen-button img {
+      display: block;
+      width: clamp(170px, 35vw, 290px);
+      height: clamp(170px, 35vw, 290px);
+      object-fit: contain;
+      border-radius: 50%;
+      user-select: none;
+      -webkit-user-drag: none;
+      filter: drop-shadow(0 0 12px rgba(0, 105, 255, .48));
+    }
+    .goldhen-button span {
+      font-size: clamp(19px, 3vw, 27px);
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: .4px;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0, 105, 255, .75);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .goldhen-button:hover {
+        transform: scale(1.10);
+        filter: brightness(1.12);
+      }
+    }
+    .goldhen-button:active {
+      transform: scale(.96);
+    }
+    .goldhen-button:focus-visible {
+      outline: 2px solid #168cff;
+      outline-offset: 12px;
+      border-radius: 18px;
+    }
+  </style>
 </head>
 <body>
-<script>
-var histlength=history.length;history.go(-histlength 2);
-</script>
-<h1 id=msgs>PS4 07712082333 GoldHEN - 5 + 14.02</h1>
-<hr>
-<br>
-<div id=menu>
-<h1 style="font-size: 18px;color: yellow;">Select Your Firmware</h1>
-<button class="btn btn-multi" onmouseover="msgs.innerHTML='PS4 GoldHEN Host for 5.05 and 7.00 to 14.02 FW - (Auto Exploit Selection)'" onmouseout="msgs.innerHTML='PS4 07712082333 GoldHEN - 5 + 14.02'" onclick="location.replace('g2all/index.html')"> GoldHEN Multi FW </button>
-<button class="btn" onmouseover="msgs.innerHTML='PS4 5.05 FW Host v2.5'" onmouseout="msgs.innerHTML='PS4 07712082333 GoldHEN - 5 + 14.02'" onclick="location.replace('505/index.html')"> 5.05 FW v2.5 </button>
-<a href="672goldhen/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 6.72 FW GoldHEN Host'" onmouseout="msgs.innerHTML='PS4 07712082333 GoldHEN - 5 + 14.02'"> 6.72 FW GoldHEN </button></a>
-<a href="672/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 6.72 FW Host v3.0'" onmouseout="msgs.innerHTML='PS4 07712082333 GoldHEN - 5 + 14.02'"> 6.72 FW v3.0 </button></a>
-<br>
-<a href="900goldhen/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 9.00 FW GoldHEN Host - (FontFaceSet Webkit)'" onmouseout="msgs.innerHTML='PS4 07712082333 GoldHEN - 5 + 14.02'"> 9.00 FW GoldHEN </button></a>
-<a href="900v3/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 9.00 FW Host v3.0 - (FontFaceSet Webkit)'" onmouseout="msgs.innerHTML='PS4 07712082333 GoldHEN - 5 + 14.02'"> 9.00 FW v3.0 </button></a>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Restore a Host to User&#8217;s Guide without using DNS'" onmouseout="msgs.innerHTML='PS4 07712082333 GoldHEN - 5 + 14.02'" onclick="location.replace('restore/index.html')"> Restore Host </button>
-<br>
-<button class="btn btn-onln" onmouseover="msgs.innerHTML='If you like my work you can support me with a donation.'" onmouseout="msgs.innerHTML='PS4 07712082333 GoldHEN - 5 + 14.02'" onclick="donations()" style="margin-top: 137px;margin-bottom: 77px;width: 468px;"> For Donations (Only in Cryptocurrencies) </button>
-<h1 style="margin-top: 78px;">Designed by:<a href="07712082333" style="color: #f31414;margin-left: 10px;margin-right: 10px;"> مكتب العراب </a></h1>
-</div>
-<div id=crypto>
-<h1 style="font-size: 18px;color: yellow;">Donate with Bitcoin (BTC):</h1>
-<img src="btc.jpg" width="150" height="150">
-<br>
-<h1 style="font-size: 18px;">bc1q6cnsykmvem6zgw8wag3ygee0jkhtxj6rkp2nrm</h1>
-<br>
-<h1 style="font-size: 18px;color: yellow;">Donate with Ethereum (ETH):</h1>
-<img src="eth.jpg" width="150" height="150">
-<h1 style="font-size: 18px;">0x7Ae1825ddE196925dB8B7832F436cA0eAeaF932c</h1>
-<button class="btn" onclick="load_menu()"> Return </button>
-</div>
-<script>
-function donations(){
-document.getElementById("crypto").style.display = "block";
-document.getElementById("menu").style.display = "none";
-}
-
-function load_menu(){
-document.getElementById("menu").style.display = "block";
-document.getElementById("crypto").style.display = "none";
-}
-</script>
+  <main class="screen">
+    <button class="goldhen-button" type="button"
+      aria-label="GoldHEN Multi FW"
+      onclick="window.location.href='g2all/index.html'">
+      <img src="hexor-icon.png" alt="مكتب العراب">
+      <span>GoldHEN Multi FW</span>
+    </button>
+  </main>
 </body>
 </html>
